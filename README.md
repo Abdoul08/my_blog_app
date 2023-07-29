@@ -20,7 +20,8 @@ bundle install
 
 yarn install --check-filesrails db:create && rails db:migrate
 
-rails s```
+rails s
+```
 
 ## Catalog design and table definition
 https://docs.google.com/spreadsheets/d/13YXJNXkbSOHw12lNu7gXT454jpl-rff0TVh1Ty27B-Y/edit?usp=sharing
