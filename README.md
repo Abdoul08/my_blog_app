@@ -9,7 +9,7 @@ Blog app est une application web qui permet de créer et de consulter des articl
 * Rails version
 6.0.6
 
-* How to run the website
+## How to run the website
 git clone https://github.com/Abdoul08/my_blog_app.git
 cd my_blog_app
 bundle install
@@ -17,10 +17,10 @@ yarn install --check-files
 rails db:create && rails db:migrate
 rails s
 
-* Catalog design and table definition
+## Catalog design and table definition
 https://docs.google.com/spreadsheets/d/13YXJNXkbSOHw12lNu7gXT454jpl-rff0TVh1Ty27B-Y/edit?usp=sharing
 
-* wireframe
+## wireframe
 https://www.figma.com/file/ST8oMlq6KXQGpma4fvIOnh/Untitled?type=design&node-id=0%3A1&mode=design&t=bI16IksDF6aVtoFx-1
 
 ![ER diagram](ER_diagram.png)
