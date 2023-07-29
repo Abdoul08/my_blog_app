@@ -24,7 +24,9 @@ https://docs.google.com/spreadsheets/d/13YXJNXkbSOHw12lNu7gXT454jpl-rff0TVh1Ty27
 ## wireframe
 https://www.figma.com/file/ST8oMlq6KXQGpma4fvIOnh/Untitled?type=design&node-id=0%3A1&mode=design&t=bI16IksDF6aVtoFx-1
 
+## ER diagramm
 ![ER diagram](ER_diagram.png)
 
+## Screen transition diagram
 
 ![Screen transition diagram](screen_transition_diagram.png)
