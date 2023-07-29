@@ -14,11 +14,13 @@ Blog app est une application web qui permet de créer et de consulter des articl
 ``` 
 git clone https://github.com/Abdoul08/my_blog_app.git
  
-cd bus_station
+cd my_blog_app
 
 bundle install
 
-yarn install --check-filesrails db:create && rails db:migrate
+yarn install --check-files
+
+rails db:create && rails db:migrate
 
 rails s
 ```
