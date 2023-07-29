@@ -11,12 +11,16 @@ Blog app est une application web qui permet de créer et de consulter des articl
 
 ## How to run the website
 
-$ git clone https://github.com/Abdoul08/my_blog_app.git
-$ cd bus_station
-$ bundle install
-$ yarn install --check-files
-$ rails db:create && rails db:migrate
-$ rails s
+``` 
+git clone https://github.com/Abdoul08/my_blog_app.git
+ 
+cd bus_station
+
+bundle install
+
+yarn install --check-filesrails db:create && rails db:migrate
+
+rails s ```
 
 ## Catalog design and table definition
 https://docs.google.com/spreadsheets/d/13YXJNXkbSOHw12lNu7gXT454jpl-rff0TVh1Ty27B-Y/edit?usp=sharing
