@@ -1,0 +1,7 @@
+<h1><%= @article.title %></h1> 
+
+<%#= link_to @article.image.filename, @article.image if @article.image.attached? %>
+
+<%= image_tag @article.image.variant(resize_to_limit: [750, 750]) if @article.image.attached? %>
+
+<p><%= @article.content %></ul></p>

@@ -7,9 +7,34 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <% if user_signed_in? %>
+        <ul >
+          <li><%= link_to "Utilisateurs", users_path%></li>
+          <li><%= link_to "Articles",articles_path%></li>
+          <li><%= link_to "Nouvel article",new_article_path%></li>
+          <li><%= link_to "Mes articles",user_articles_path(current_user)%></li>
+          <li><%= link_to "Liste des catégories", categories_path%></li>
+          <li><%= link_to "Nouvelle catégorie", new_category_path%></li>
+          <li><%= link_to "Mon compte", user_path(current_user) %></li>
+          <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
+        </ul>
+    <% else %>
+        <ul>
+        <%= link_to "Nouvelle inscription", new_user_registration_path %>
+        <%= link_to "Connexion", new_user_session_path%>
+        </ul>
+    <% end %>
+        
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+      
+    <div>
+      <%= yield %>
+    </div>
   </body>
 </html>
+

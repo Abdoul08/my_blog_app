@@ -1,0 +1,55 @@
+<h1>Liste des articles</h1> 
+
+<div>
+<%= search_form_for @q do |f| %>
+    <%= f.label :title_cont,"Titre " %>
+    <%= f.search_field :title_cont%>
+
+    <%= f.collection_select :categorie_id_eq, Categorie.all, :id, :name,  { include_blank: 'Sélectionnez une catégorie' } %>
+    
+    <%= f.submit "Rechercher" %>
+  <% end %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Categorie</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.categorie%></td>
+        <td><%= link_to "Lire", article %></td>
+        <% if current_user == article.user %> <!-- Vérifie le propriétaire de l'article -->
+        <td>
+          
+            <%= link_to 'Modifier', edit_article_path(article) %>
+            <%= link_to 'Supprimer', article, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>
+          
+        </td>
+
+        <% elsif current_user.admin? %>
+        <td>
+
+        <%= link_to 'Supprimer', article, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>
+
+        </td>
+        <% end %>
+            <td id="favorite-<%= article.id %>">
+            <%= render partial: "favorite", locals: { article: article } %>
+            </td>
+        
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+
+<%= paginate @articles %>
+
