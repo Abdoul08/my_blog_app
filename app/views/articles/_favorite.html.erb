@@ -1,0 +1,11 @@
+<% if Favorite.find_by(user_id: current_user.id, article_id: article.id) %>
+  <%= link_to favorite_path(id: current_user.favorites.find_by(article_id: article.id), article_id: article.id), method: :delete, class: "favorite-link delete-#{article.id}", remote: true do %>
+  <i class="material-icons " style="color: red;">favorite</i>
+
+  <% end %>
+<% else %>
+  <%= link_to favorites_path(article_id: article.id), method: :post, class: "favorite-link post-#{article.id}", remote: true do %>
+    <i class="material-icons" style="color: red;">favorite_border</i>
+  <% end %>
+<% end %>
+<%= article.favorites.length %>

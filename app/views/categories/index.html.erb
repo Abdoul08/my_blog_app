@@ -1,0 +1,24 @@
+<h1>Page de liste des catégories</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |categorie| %>
+      <tr>
+        <td><%= categorie.name %></td>
+        <td>
+          <% if current_user.admin? %> <!-- Vérifie le propriétaire de l'article -->
+            <%= link_to 'Modifier', edit_category_path(categorie) %>
+            <%= link_to 'Supprimer',  categorie, method: :delete, data: { confirm: t('common.confirm_destroy') }%>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
