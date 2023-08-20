@@ -1,22 +1,29 @@
-<h1>Utilisateurs</h1>
+<div class="row justify-content-center">
+  <div class="col-12 col-sm-6 col-md-8">
+    <h2 class="text-center mb-4">Utilisateurs</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Adresse e-mail</th>
-      <th>Administrateur</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.admin ? 'Oui' : 'Non' %></td>
-        <td><%= link_to t('common.edit'), edit_user_path(user) %></td>
-        <td><%= link_to t('common.destroy'), user, method: :delete, data: {confirm: "Êtes-vous sûr?" } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Adresse e-mail</th>
+          <th scope="col">Administrateur</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.admin ? 'Oui' : 'Non' %></td>
+            <td>
+              <%= link_to t('common.edit'), edit_user_path(user), class: "btn btn-outline-primary btn-sm mr-2" %>
+              <%= link_to t('common.destroy'), user, method: :delete, data: { confirm: "Êtes-vous sûr?" }, class: "btn btn-outline-danger btn-sm", title: "Supprimer" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -16,6 +16,33 @@
  /*--------------------------------------------------------------------- 
 header 
 ---------------------------------------------------------------------*/
-/* Réinitialisation des styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+nav.navbar, footer {
+    background-color: #87CEEB;
+}
+nav.navbar a.navbar-brand {
+    font-weight: 600;
+    font-size: 24px;
+    color: #fff;
+}
+ul.navbar-nav li.nav-item {
+    margin-right: 10px;
+}
+ul.navbar-nav li.nav-item a.nav-link {
+    color: #fff;
+    font-weight: 500;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
 
   

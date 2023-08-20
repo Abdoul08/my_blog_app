@@ -1,7 +1,21 @@
-<h1><%= @article.title %></h1> 
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-8 mb-5">
+        <div class="card custom-card">
+            <%= image_tag @article.image.variant(resize_to_limit: [750, 750]) if @article.image.attached? %>
+            <div class="card-body">
+                <h2 class="card-title text-center custom-title"><%= @article.title %></h2>
+                <p id="favorite-<%= @article.id %>" class="text-left">
+                    <%= render partial: "favorite", locals: { article: @article } %>
+                </p>
+                <div class="article-content custom-content">
+                    <%= @article.content %>
+                </div>
 
-<%#= link_to @article.image.filename, @article.image if @article.image.attached? %>
-
-<%= image_tag @article.image.variant(resize_to_limit: [750, 750]) if @article.image.attached? %>
-
-<p><%= @article.content %></ul></p>
+                <div class="article-details text-center">
+                    <p class="published-by">Publié par <%= @article.user.name %></p>
+                    <p class="published-date">Le <%= @article.created_at.strftime('%d/%m/%Y') %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

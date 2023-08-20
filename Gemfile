@@ -25,6 +25,8 @@ gem 'cancancan'
 gem 'kaminari'
 gem 'active_storage_validations'
 gem 'webdrivers'
+gem 'faker'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

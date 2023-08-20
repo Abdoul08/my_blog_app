@@ -1,44 +1,59 @@
-<h1>Mes articles</h1> 
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="col-12 col-sm-8 col-md-8 mb-5">
+      <h2 class="text-center mb-4">Mes articles</h2>
 
-<%= search_form_for @q do |f| %>
-    <%= f.label :title_cont,"Titre " %>
-    <%= f.search_field :title_cont%>
+      <div class="mb-4">
+        <%= search_form_for @q do |f| %>
+          <div class="form-group">
+            <%= f.label :title_cont, "Titre " %>
+            <%= f.search_field :title_cont, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.collection_select :categorie_id_eq, Categorie.all, :id, :name, { include_blank: 'Sélectionnez une catégorie' }, class: "form-control" %>
+          </div>
+          <%= f.submit "Rechercher", class: "btn btn-primary" %>
+        <% end %>
+      </div>
 
-    <%= f.collection_select :categorie_id_eq, Categorie.all, :id, :name,  { include_blank: 'Sélectionnez une catégorie' } %>
-    
-    <%= f.submit "Rechercher" %>
-  <% end %>
+      <div class="row">
+        <% current_user.articles.each do |article| %>
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <% if article.image.present? %>
+                <%= image_tag article.image, class: "card-img-top", alt: article.title %>
+              <% else %>
+                <%= image_tag "default-image.jpg", class: "card-img-top", alt: "Default Image" %>
+              <% end %>
+              <div class="card-body">
+                <h6 class="card-title">
+                  <%= article.title %>
+                </h6>
+                <p class="card-text">Catégorie : <%= article.categorie.name %></p>
+                <div class="text-center">
+                  <p id="favorite-<%= article.id %>">
+                    <%= render partial: "favorite", locals: { article: article } %>
+                  </p>
+                  <a href="<%= article_path(article) %>" class="btn btn-primary">Lire</a>
+                  <% if current_user == article.user || current_user.admin? %>
+                    <a href="<%= edit_article_path(article) %>" class="btn btn-secondary">Modifier</a>
+                    <a href="<%= article_path(article) %>" data-confirm="Êtes-vous sûr ?" data-method="delete" class="btn btn-danger">Supprimer</a>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Categorie</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% current_user.articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.categorie%></td>
-        <td><%= link_to "Lire", article %></td>
-        <td>
-          <% if current_user == article.user %> <!-- Vérifie le propriétaire de l'article -->
-            <%= link_to 'Modifier', edit_article_path(article) %>
-            <%= link_to 'Supprimer', article, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>
-          <% end %>
-        </td>
-        <td id="favorite-<%= article.id %>">
-            <%= render partial: "favorite", locals: { article: article } %>
-        </td>
-      </tr>
-    <% end %>
-    
-  </tbody>
-</table>
-
-<%= paginate @articles %>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <%= paginate @articles, class: 'pagination justify-content-center' %>
+    </div>
+  </div>
+</div>
