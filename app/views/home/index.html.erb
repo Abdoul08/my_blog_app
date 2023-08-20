@@ -1,7 +1,37 @@
-<section class="content">
-<div class="centered-content">
-</div>      
-</section>
+<div class="row justify-content-center">
+  <div class="col-12 col-sm-8 col-md-10 mb-5">
+    <div class="jumbotron">
+      <h2 class="text-center">Bienvenue sur votre site de blog préféré</h2>
+      <p class="text-center">Découvrez l'inspiration, la créativité et la connaissance</p>
+      <div class="text-center">
+      <% if user_signed_in? %>
+        <%= link_to "Commencer", articles_path, class:"btn btn-dark" %>         
+      <% else %>
+        <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-dark" %>
+      <% end %>
+      </div>
+    </div>
 
-
-
+    <div class="features" id="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 text-center mb-4">
+            
+            <div class="feature-title">Inspiration</div>
+            <div class="feature-text">Laissez-vous inspirer par des articles riches en idées et en perspectives.</div>
+          </div>
+          <div class="col-sm-4 text-center mb-4">
+            
+            <div class="feature-title">Communauté</div>
+            <div class="feature-text">Rejoignez une communauté de passionnés et partagez vos pensées et vos découvertes.</div>
+          </div>
+          <div class="col-sm-4 text-center">
+            
+            <div class="feature-title">Connaissance</div>
+            <div class="feature-text">Explorez des sujets variés et approfondissez vos connaissances avec nos articles informatifs.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

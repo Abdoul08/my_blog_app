@@ -1,5 +1,19 @@
-<h1>Mon compte</h1> 
-<h2>Nom &nbsp<%= @user.name %> </h2>
-<p>Email adress &nbsp<%= @user.email %></ul></p>
-<%= link_to "Modifier", edit_user_registration_path %>
-
+<div class="row justify-content-center">
+  <div class="col-12 col-sm-8 col-md-6">
+    <h2 class="text-center mb-4">Mon Compte</h2>
+    
+    <div class="text-center mb-3">
+      <p class="mb-0">Nom :</p>
+      <p class="font-weight-bold"><%= @user.name %></p>
+    </div>
+    
+    <div class="text-center mb-3">
+      <p class="mb-0">Email :</p>
+      <p class="font-weight-bold"><%= @user.email %></p>
+    </div>
+    
+    <div class="text-center">
+      <%= link_to "Modifier", edit_user_registration_path, class: "btn btn-outline-dark font-weight-bold" %>
+    </div>
+  </div>
+</div>

@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
     def check_article_owner
         @user = User.find(params[:user_id])
         unless current_user == @user
-          flash[:alert] = "You are not authorized to access this page."
+          flash[:alert] = "Vous n'êtes pas autoriser à accéder à cette page"
           redirect_to root_path
         end
     end

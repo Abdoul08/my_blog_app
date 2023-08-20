@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.jumbotron {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 100px 0;
+    margin-bottom: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.jumbotron h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.jumbotron p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+.features {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.feature-icon {
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature-text {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+  
+
+.btn-start:hover {
+    background-color: #555;
+}
