@@ -9,7 +9,7 @@ Blog app est une application web qui permet de créer et de consulter des articl
 * Rails version
 6.0.6
 
-## How to run the website
+## Comment exécuter ce site ?
 
 ``` 
 git clone https://github.com/Abdoul08/my_blog_app.git
@@ -21,6 +21,8 @@ bundle install
 yarn install --check-files
 
 rails db:create && rails db:migrate
+
+rails db:seed
 
 rails s
 ```

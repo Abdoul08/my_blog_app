@@ -35,24 +35,3 @@ admin = User.create!(
   admin: true
 )
 
-# Générer des articles avec des images
-5.times do
-  article = Article.create!(
-    title: Faker::Lorem.sentence,
-    content: Faker::Lorem.paragraphs.join("\n\n"),
-    categorie_id: categorie_ids.sample,
-    user_id: random_user_id
-  )
-  
-  # Utilise Rack::Test::UploadedFile pour créer un objet téléchargé
-  image_path = Rails.root.join('app', 'assets', 'images', 'acteur.png')
-  article.image.attach(io: File.open(image_path), filename: 'acteur.png', content_type: 'image/png')
-
-  # Générer des favoris pour chaque article
-  rand(1..3).times do
-    Favori.create!(
-      user: User.where(admin: 'false').sample,
-      article: article
-    )
-  end
-end
