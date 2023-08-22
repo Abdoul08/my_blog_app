@@ -54,6 +54,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  gem "capistrano", "~> 3.10", require: false # 追記
+  gem "capistrano-rails", "~> 1.6", require: false # 追記
+  gem 'capistrano-safe-deploy-to' # 追記
 end
 
 group :test do
