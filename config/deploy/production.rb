@@ -53,7 +53,7 @@
    user: "ec2-user",
    roles: %w{web app},
    ssh_options: {
-     user: "user_name", # overrides user setting above
+     user: "ec2-user", # overrides user setting above
      keys: %w(/home/abdoul/.ssh/dic_sample.pem),
      forward_agent: false,
      auth_methods: %w(publickey password)
