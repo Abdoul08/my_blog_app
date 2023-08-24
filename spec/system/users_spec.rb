@@ -74,7 +74,7 @@ RSpec.describe "Users", type: :system do
         fill_in 'Email', with: @second_user.email
         fill_in 'Mot de passe', with: @second_user.password
         click_on 'Se connecter'
-        visit users_path
+        expect(page).to have_current_path(users_path)
         expect(page).to have_content "Seul l'admin peut accéder à cette page"
       end
     end
@@ -87,7 +87,7 @@ RSpec.describe "Users", type: :system do
         fill_in 'Email', with: @second_user.email
         fill_in 'Mot de passe', with: @second_user.password
         click_on 'Se connecter'
-        visit new_category_path
+        expect(page).to have_current_path(new_category_path)
         expect(page).to have_content "Seul l'admin peut accéder à cette page"
       end
     end
@@ -102,7 +102,7 @@ RSpec.describe "Users", type: :system do
         fill_in 'Email', with: @user.email
         fill_in 'Mot de passe', with: @user.password
         click_on 'Se connecter'
-        visit new_article_path
+        expect(page).to have_current_path(new_article_path)
         expect(page).to have_content "Page réservée aux utilisateurs"
       end
     end
