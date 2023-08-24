@@ -29,7 +29,7 @@ RSpec.describe "Categories", type: :system do
         fill_in 'Email', with: @user.email
         fill_in 'Mot de passe', with: @user.password
         click_on 'Se connecter'
-        click_on 'Liste des catégories'
+        click_on 'Catégories'
         click_link 'Modifier'
         fill_in 'Nom', with: 'One man show'
         click_on 'Mise à jour'
@@ -46,7 +46,7 @@ RSpec.describe "Categories", type: :system do
         fill_in 'Email', with: @user.email
         fill_in 'Mot de passe', with: @user.password
         click_on 'Se connecter'
-        click_on 'Liste des catégories'
+        click_on 'Catégories'
         click_link 'Supprimer'
         page.accept_confirm
         expect(page).to have_content "Catégorie supprimée"
