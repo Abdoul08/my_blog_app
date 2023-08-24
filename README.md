@@ -6,7 +6,7 @@ Blog app est une application web qui permet de créer et de consulter des articl
 ## Language de programmmation et Framework
 * Ruby version
 3.0.1
-* Rails versio
+* Rails version
 6.0.6
 
 ## Comment exécuter ce site ?
