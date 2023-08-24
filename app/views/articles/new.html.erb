@@ -16,12 +16,12 @@
 
                 <div class="form-group">
                     <%= f.label :title, class: "label" %>
-                    <%= f.text_field :title, class: "input form-control" %>
+                    <%= f.text_field :title, class: "input form-control" , placeholder: "Titre" %>
                 </div>
 
                 <div class="form-group">
                     <%= f.label :categorie_id, "Catégorie", class: "label" %>
-                    <%= f.collection_select :categorie_id, Categorie.all, :id, :name, include_blank: true, class: "input form-control" %>
+                    <%= f.collection_select :categorie_id, Categorie.all, :id, :name, { include_blank: 'Sélectionnez une catégorie' }, class: "input form-control", placeholder: "Catégorie" %>
                 </div>
 
                 <div class="form-group">
@@ -31,7 +31,7 @@
 
                 <div class="form-group">
                     <%= f.label :content, class: "label" %>
-                    <%= f.text_area :content, class: "input form-control" %>
+                    <%= f.text_area :content, class: "input form-control", placeholder: "Contenu" %>
                 </div>
 
                 <div class="text-center">

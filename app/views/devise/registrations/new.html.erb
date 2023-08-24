@@ -7,12 +7,12 @@
 
   <div class="form-group">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input form-control"  %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input form-control", placeholder: "Nom"  %>
   </div>
 
   <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input form-control" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "input form-control", placeholder: "Email" %>
   </div>
 
   <div class="form-group">
@@ -20,12 +20,12 @@
     <% if @minimum_password_length %>
     <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "input form-control"  %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "input form-control", placeholder: "Mot de passe"  %>
   </div>
 
   <div class="form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input form-control"  %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input form-control", placeholder: "Mot de passe de confirmation"  %>
   </div>
 
   <div class="text-center">
