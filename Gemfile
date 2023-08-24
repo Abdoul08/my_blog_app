@@ -26,7 +26,7 @@ gem 'kaminari'
 gem 'active_storage_validations'
 gem 'webdrivers'
 gem 'faker'
-gem 'unicorn'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -35,6 +35,7 @@ gem 'unicorn'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
+gem 'unicorn'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -59,6 +60,7 @@ group :development do
   gem "capistrano-rails", "~> 1.6", require: false # 追記
   gem 'capistrano-safe-deploy-to' # 追記
   gem 'capistrano3-unicorn' 
+  gem 'bootsnap', '>= 1.4.2', require: false
 end
 
 group :test do

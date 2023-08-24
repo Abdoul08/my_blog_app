@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :system do
+  
   describe "CRUD de l'utilisateur" do
     context 'Quand un utilisateur crée un compte' do
       it 'La création réussit' do
