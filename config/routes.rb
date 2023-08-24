@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :users, except: [ :new ]
   resources :favorites, only: [:create, :destroy]
   resources :articles
+  #Route personnalisé du controller articles pour l'action user_articles
   get 'users/:user_id/articles', to: 'articles#user_articles', as: :user_articles
   
 end

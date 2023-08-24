@@ -20,7 +20,9 @@ bundle install
 
 yarn install --check-files
 
-rails db:create && rails db:migrate
+rails db:create 
+
+rails db:migrate
 
 rails db:seed
 

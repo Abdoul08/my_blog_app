@@ -30,7 +30,7 @@
             <li class="nav-item"><%= link_to "Nouvelle catégorie", new_category_path, class: "nav-link" %></li>
           <% end %>
           <li class="nav-item"><%= link_to "Articles", articles_path, class: "nav-link" %></li>
-          <% unless current_user.admin?  %>
+          <% if !current_user.admin?%>
             <li class="nav-item"><%= link_to "Mes articles", user_articles_path(current_user), class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "Nouvel article", new_article_path, class: "nav-link" %></li>
           <% end %>
