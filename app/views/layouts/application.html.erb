@@ -19,7 +19,7 @@
           <li><%= link_to "Mes articles",user_articles_path(current_user)%></li>
           <li><%= link_to "Liste des catégories", categories_path%></li>
           <li><%= link_to "Nouvelle catégorie", new_category_path%></li>
-          <li><%= link_to "Mon compte", user_path(current_user) %></li>
+          <li><%= link_to "on compte", user_path(current_user) %></li>
           <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
         </ul>
     <% else %>
