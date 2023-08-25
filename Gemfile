@@ -35,7 +35,6 @@ gem 'faker'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
-gem 'unicorn'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -59,7 +58,6 @@ group :development do
   gem "capistrano", "~> 3.10", require: false # 追記
   gem "capistrano-rails", "~> 1.6", require: false # 追記
   gem 'capistrano-safe-deploy-to' # 追記
-  gem 'capistrano3-unicorn' 
   gem 'bootsnap', '>= 1.4.2', require: false
 end
 
